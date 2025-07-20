@@ -2,8 +2,8 @@
 
 namespace RoundTheCode.xUnit
 {
-    public class NumberHelperTheoryTest
-    {
+   public class NumberHelperTheoryTest
+   {
       [Theory]
       [InlineData(3)]
       [InlineData(5)]
@@ -41,13 +41,18 @@ namespace RoundTheCode.xUnit
       }
 
       [Theory]
+      [InlineData(-1, "Negative")]
+      [InlineData(0, "Zero")]
       [InlineData(8, "Great")]
       [InlineData(2, "Bad")]
       [InlineData(5, "Ok")]
+      [InlineData(11, "Unknown")]
       public void RatingScore_Values_EqualCorrectRating(int number, string expectedRating)
       {
          Assert.Equal(expectedRating, NumberHelper.RatingScore(number));
       }
+
+
 
    }
 }
